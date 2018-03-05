@@ -1,0 +1,15 @@
+version: '2'
+services:
+  lemp:
+    build: .
+    restart: always
+    volumes:
+      - ./www:/var/www/
+      - ./mysql:/var/lib/mysql/
+    environment:
+      - MYSQL_DB=wordpressdb
+      - MYSQL_USER=wordpressuser
+      - MYSQL_PASS=asdasd
+    ports:
+      - 80:80
+      - 443:443
